@@ -1,0 +1,11 @@
+body {
+    background: #fafafa;
+}
+
+h1, h2 {
+    font-weight: 700;
+}
+
+.card {
+    border-radius: 12px;
+}

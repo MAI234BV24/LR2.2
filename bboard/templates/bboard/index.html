@@ -1,0 +1,18 @@
+{% extends 'bboard/base.html' %}
+
+{% block title %}Все объявления{% endblock %}
+
+{% block content %}
+    {% for bb in bbs %}
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5>{{ bb.title }}</h5>
+            <p>{{ bb.content|default:"Нет описания" }}</p>
+            <p><b>Цена:</b> {{ bb.price }} ₽</p>
+            <a class="btn btn-primary" href="{% url 'detail' bb.id %}">Подробнее</a>
+        </div>
+    </div>
+    {% empty %}
+    <p>Нет объявлений.</p>
+    {% endfor %}
+{% endblock %}
